@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-    
+    /*
     stage ('Check-Git-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -40,13 +40,14 @@ pipeline {
         }
       }
     }
-    
+    */
     stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
     }
     
+    /*
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
@@ -63,6 +64,6 @@ pipeline {
         }
       }
     }
-    
+    */
   }
 }
